@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b01f2e" />
+  <title>Blog - FitLife</title>
+  <link rel="icon" href="assets/images/icon-fl.svg" type="image/x-icon" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/css/main.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/icon-fl.svg" alt="FitLife Logo" class="me-2" height="40" />
+        <h1 class="h4 mb-0">Fit<span class="text-danger">Life</span></h1>
+      </a>
+
+      <!-- Botón de hamburguesa para móvil -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú principal -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="clases.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Clases
+            </a>
+            <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end p-3" aria-labelledby="navbarDropdown">
+              <div class="row g-3" style="min-width: 600px">
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Cardio</h6>
+                  <a class="dropdown-item" href="clases.html#spinning">Spinning</a>
+                  <a class="dropdown-item" href="clases.html#zumba">Zumba</a>
+                  <a class="dropdown-item" href="clases.html#hiit">HIIT</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Fuerza</h6>
+                  <a class="dropdown-item" href="clases.html#crossfit">CrossFit</a>
+                  <a class="dropdown-item" href="clases.html#funcional">Funcional</a>
+                  <a class="dropdown-item" href="clases.html#musculacion">Musculación</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Mente-Cuerpo</h6>
+                  <a class="dropdown-item" href="clases.html#yoga">Yoga</a>
+                  <a class="dropdown-item" href="clases.html#pilates">Pilates</a>
+                  <a class="dropdown-item" href="clases.html#meditacion">Meditación</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="entrenadores.html">Entrenadores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="precios.html">Precios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-danger" href="contacto.html">Prueba Gratis</a>
+          </li>
+        </ul>
+
+        <!-- Botón de modo oscuro -->
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="dark-mode-toggle" />
+            <label class="form-check-label text-light" for="dark-mode-toggle">
+              <i class="fas fa-sun me-1"></i>/<i class="fas fa-moon ms-1"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="position-relative overflow-hidden bg-dark text-white">
+    <div class="ratio ratio-16x9 position-absolute top-0 start-0 w-100 h-100">
+      <video class="object-fit-cover" autoplay muted loop playsinline>
+        <source src="assets/videos/blog-hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="position-absolute w-100 h-100 bg-dark opacity-50"></div>
+    <div class="container position-relative py-5 my-5">
+      <div class="row min-vh-50 align-items-center py-5">
+        <div class="col-lg-8 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000"
+          data-aos-delay="200">
+          <h1 class="display-4 fw-bold mb-4">BLOG DE FITNESS</h1>
+          <p class="lead mb-0">Consejos, noticias y artículos sobre fitness y bienestar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG SECTION -->
+  <section class="py-5">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Últimas Publicaciones</h2>
+        <p class="text-muted">Mantente al día con las últimas tendencias en fitness y bienestar</p>
+      </div>
+
+      <!-- Horizontal scrolling -->
+      <div class="row flex-nowrap overflow-auto pb-4 mb-5 g-4">
+        <div class="col-10 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/images/classes/crossfit.jpg" class="card-img-top" alt="Tendencias de fitness">
+            <div class="card-body">
+              <div class="d-flex align-items-center text-muted small mb-2">
+                <i class="far fa-calendar-alt me-2"></i>
+                <span>15 Mar 2025</span>
+              </div>
+              <h5 class="card-title">Tendencias de Fitness para 2025</h5>
+              <p class="card-text">Descubre las tendencias de fitness que dominarán este año y cómo incorporarlas a tu
+                rutina.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-10 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/images/blog/eathealthy.jpg" class="card-img-top" alt="Nutrición deportiva">
+            <div class="card-body">
+              <div class="d-flex align-items-center text-muted small mb-2">
+                <i class="far fa-calendar-alt me-2"></i>
+                <span>10 Mar 2025</span>
+              </div>
+              <h5 class="card-title">Guía de Nutrición Deportiva</h5>
+              <p class="card-text">Todo lo que necesitas saber sobre alimentación para optimizar tu rendimiento
+                deportivo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-10 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/images/classes/yoga.jpg" class="card-img-top" alt="Yoga para principiantes">
+            <div class="card-body">
+              <div class="d-flex align-items-center text-muted small mb-2">
+                <i class="far fa-calendar-alt me-2"></i>
+                <span>5 Mar 2025</span>
+              </div>
+              <h5 class="card-title">Yoga para Principiantes</h5>
+              <p class="card-text">Aprende las posturas básicas y los beneficios del yoga para tu cuerpo y mente.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-10 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="400">
+            <img src="assets/images/blog/home.jpg" class="card-img-top" alt="Entrenamiento en casa">
+            <div class="card-body">
+              <div class="d-flex align-items-center text-muted small mb-2">
+                <i class="far fa-calendar-alt me-2"></i>
+                <span>1 Mar 2025</span>
+              </div>
+              <h5 class="card-title">Entrenamiento Efectivo en Casa</h5>
+              <p class="card-text">Rutinas de ejercicio que puedes hacer en casa sin necesidad de equipamiento
+                especializado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main blog content with sidebar -->
+      <div class="row g-5">
+        <!-- Main content -->
+        <div class="col-lg-8">
+          <!-- Featured post -->
+          <div class="card mb-5 shadow border-0 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+            <div class="row g-0">
+              <div class="col-md-6">
+                <img src="assets/images/classes/hiit.jpg" class="img-fluid h-100 object-fit-cover"
+                  alt="Los beneficios del entrenamiento de fuerza">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body p-4 d-flex flex-column h-100">
+                  <div class="badge bg-danger mb-2">Destacado</div>
+                  <h3 class="card-title h4">Los Beneficios del Entrenamiento de Fuerza para Todos</h3>
+                  <p class="card-text flex-grow-1">El entrenamiento de fuerza no es solo para culturistas. Descubre cómo
+                    puede mejorar tu salud, aumentar tu metabolismo y prevenir lesiones, independientemente de tu edad o
+                    nivel de condición física.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <div class="small text-muted">
+                      <span class="fw-bold">Miguel Torres</span> • 20 Mar 2025
+                    </div>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Leer más</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Regular blog posts -->
+          <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+            <!-- Post 1 -->
+            <div class="col blog-post" data-category="nutricion">
+              <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                <img src="assets/images/blog/healthyfood.jpg" class="card-img-top" alt="Alimentación pre-entrenamiento">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between text-muted small mb-2">
+                    <div><i class="far fa-calendar-alt me-1"></i> 18 Mar 2025</div>
+                    <div><i class="far fa-eye me-1"></i> 256</div>
+                  </div>
+                  <h5 class="card-title">Qué Comer Antes de Entrenar: Guía Completa</h5>
+                  <p class="card-text">Aprende qué alimentos consumir antes de tu entrenamiento para maximizar tu
+                    energía y rendimiento.</p>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="badge bg-secondary me-1">Nutrición</span>
+                      <span class="badge bg-secondary">Rendimiento</span>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Leer más</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="col blog-post" data-category="recuperacion">
+              <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/images/blog/stretch.jpg" class="card-img-top" alt="Estiramientos post-entrenamiento">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between text-muted small mb-2">
+                    <div><i class="far fa-calendar-alt me-1"></i> 15 Mar 2025</div>
+                    <div><i class="far fa-eye me-1"></i> 189</div>
+                  </div>
+                  <h5 class="card-title">La Importancia de los Estiramientos Post-Entrenamiento</h5>
+                  <p class="card-text">Descubre por qué los estiramientos después de entrenar son fundamentales para tu
+                    recuperación y flexibilidad.</p>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="badge bg-secondary me-1">Recuperación</span>
+                      <span class="badge bg-secondary">Flexibilidad</span>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Leer más</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="col blog-post" data-category="mente-cuerpo">
+              <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/images/blog/meditation.jpg" class="card-img-top" alt="Meditación y fitness">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between text-muted small mb-2">
+                    <div><i class="far fa-calendar-alt me-1"></i> 12 Mar 2025</div>
+                    <div><i class="far fa-eye me-1"></i> 210</div>
+                  </div>
+                  <h5 class="card-title">Meditación y Fitness: La Combinación Perfecta</h5>
+                  <p class="card-text">Cómo la meditación puede mejorar tu rendimiento físico y ayudarte a alcanzar tus
+                    objetivos de fitness.</p>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="badge bg-secondary me-1">Meditación</span>
+                      <span class="badge bg-secondary">Mente-Cuerpo</span>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Leer más</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Post 4 -->
+            <div class="col blog-post" data-category="nutricion">
+              <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                <img src="assets/images/blog/hidratation.jpg" class="card-img-top"
+                  alt="Hidratación durante el ejercicio">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between text-muted small mb-2">
+                    <div><i class="far fa-calendar-alt me-1"></i> 10 Mar 2025</div>
+                    <div><i class="far fa-eye me-1"></i> 175</div>
+                  </div>
+                  <h5 class="card-title">Guía de Hidratación Durante el Ejercicio</h5>
+                  <p class="card-text">Todo lo que necesitas saber sobre cómo mantenerte correctamente hidratado antes,
+                    durante y después del ejercicio.</p>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="badge bg-secondary me-1">Hidratación</span>
+                      <span class="badge bg-secondary">Rendimiento</span>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Leer más</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="100">
+            <nav aria-label="Paginación del blog">
+              <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active" aria-current="page">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <!-- Search widget -->
+          <div class="card mb-4 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-body">
+              <h5 class="card-title mb-3">Buscar</h5>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Buscar artículos..." aria-label="Buscar">
+                <button class="btn btn-danger" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Categories widget -->
+          <div class="card mb-4 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-body">
+              <h5 class="card-title mb-3">Categorías</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="#" class="text-decoration-none text-dark filter-category" data-category="all">Todas las
+                    categorías</a>
+                  <span class="badge bg-danger rounded-pill">57</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="#" class="text-decoration-none text-dark filter-category"
+                    data-category="nutricion">Nutrición</a>
+                  <span class="badge bg-danger rounded-pill">12</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="#" class="text-decoration-none text-dark filter-category"
+                    data-category="entrenamiento">Entrenamiento</a>
+                  <span class="badge bg-danger rounded-pill">15</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="#" class="text-decoration-none text-dark filter-category" data-category="cardio">Cardio</a>
+                  <span class="badge bg-danger rounded-pill">8</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="#" class="text-decoration-none text-dark filter-category" data-category="fuerza">Fuerza</a>
+                  <span class="badge bg-danger rounded-pill">10</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="#" class="text-decoration-none text-dark filter-category"
+                    data-category="mente-cuerpo">Mente-Cuerpo</a>
+                  <span class="badge bg-danger rounded-pill">7</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="#" class="text-decoration-none text-dark filter-category"
+                    data-category="recuperacion">Recuperación</a>
+                  <span class="badge bg-danger rounded-pill">5</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Recent posts widget -->
+          <div class="card mb-4 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-body">
+              <h5 class="card-title mb-3">Artículos Recientes</h5>
+              <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+                  <img src="assets/images/classes/hiit.jpg" alt="Entrenamiento de fuerza" width="80" height="60"
+                    class="rounded flex-shrink-0 object-fit-cover">
+                  <div class="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                      <h6 class="mb-0">Los Beneficios del Entrenamiento de Fuerza para Todos</h6>
+                      <p class="mb-0 opacity-75 small">20 Mar 2025</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+                  <img src="assets/images/blog/healthyfood.jpg" alt="Alimentación pre-entrenamiento" width="80"
+                    height="60" class="rounded flex-shrink-0 object-fit-cover">
+                  <div class="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                      <h6 class="mb-0">Qué Comer Antes de Entrenar: Guía Completa</h6>
+                      <p class="mb-0 opacity-75 small">18 Mar 2025</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+                  <img src="assets/images/blog/stretch.jpg" alt="Estiramientos post-entrenamiento" width="80"
+                    height="60" class="rounded flex-shrink-0 object-fit-cover">
+                  <div class="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                      <h6 class="mb-0">La Importancia de los Estiramientos Post-Entrenamiento</h6>
+                      <p class="mb-0 opacity-75 small">15 Mar 2025</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tags widget -->
+          <div class="card mb-4 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-body">
+              <h5 class="card-title mb-3">Etiquetas</h5>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">Nutrición</a>
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">Entrenamiento</a>
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">Cardio</a>
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">Fuerza</a>
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">Yoga</a>
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">Pilates</a>
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">CrossFit</a>
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">HIIT</a>
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">Recuperación</a>
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">Flexibilidad</a>
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">Meditación</a>
+                <a href="#" class="badge bg-light text-dark text-decoration-none p-2">Bienestar</a>
+              </div>
+            </div>
+          </div>
+          </aside>
+        </div>
+
+        <!-- Comments section -->
+        <div class="mt-5 pt-5 border-top" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="fw-bold">Comentarios</h2>
+            <p class="text-muted">Únete a la conversación y comparte tu opinión</p>
+          </div>
+
+          <div class="mb-5">
+            <!-- Comment 1 -->
+            <div class="d-flex mb-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex-shrink-0">
+                <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 50px; height: 50px;">M</div>
+              </div>
+              <div class="ms-3 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="mb-0">María García</h5>
+                  <small class="text-muted">Hace 2 días</small>
+                </div>
+                <p>Excelente artículo sobre entrenamiento de fuerza. He estado siguiendo estos consejos durante las
+                  últimas semanas y ya noto una gran diferencia en mi rendimiento. ¡Gracias por compartir!</p>
+                <div class="d-flex align-items-center">
+                  <button class="btn btn-sm btn-outline-secondary me-2">Responder</button>
+                  <button class="btn btn-sm btn-outline-secondary">
+                    <i class="far fa-thumbs-up me-1"></i> 12
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comment 2 -->
+            <div class="d-flex mb-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex-shrink-0">
+                <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 50px; height: 50px;">J</div>
+              </div>
+              <div class="ms-3 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="mb-0">Javier Méndez</h5>
+                  <small class="text-muted">Hace 5 días</small>
+                </div>
+                <p>Como entrenador de CrossFit, puedo confirmar que estos consejos son muy acertados. Especialmente el
+                  punto sobre la importancia de la técnica antes que el peso. Muchos principiantes cometen el error de
+                  querer levantar demasiado peso sin dominar primero la técnica correcta.</p>
+                <div class="d-flex align-items-center mb-3">
+                  <button class="btn btn-sm btn-outline-secondary me-2">Responder</button>
+                  <button class="btn btn-sm btn-outline-secondary">
+                    <i class="far fa-thumbs-up me-1"></i> 8
+                  </button>
+                </div>
+
+                <!-- Nested reply -->
+                <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="flex-shrink-0">
+                    <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center"
+                      style="width: 40px; height: 40px;">A</div>
+                  </div>
+                  <div class="ms-3 flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <h6 class="mb-0">Ana López</h6>
+                      <small class="text-muted">Hace 3 días</small>
+                    </div>
+                    <p>Totalmente de acuerdo, Javier. En mis clases de yoga también enfatizo mucho la importancia de la
+                      técnica correcta para prevenir lesiones y maximizar los beneficios.</p>
+                    <div class="d-flex align-items-center">
+                      <button class="btn btn-sm btn-outline-secondary me-2">Responder</button>
+                      <button class="btn btn-sm btn-outline-secondary">
+                        <i class="far fa-thumbs-up me-1"></i> 5
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comment 3 -->
+            <div class="d-flex mb-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex-shrink-0">
+                <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 50px; height: 50px;">C</div>
+              </div>
+              <div class="ms-3 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="mb-0">Carlos Rodríguez</h5>
+                  <small class="text-muted">Hace 1 semana</small>
+                </div>
+                <p>Me gustaría ver más artículos sobre nutrición pre y post entrenamiento. Es un tema que complementa
+                  muy bien el entrenamiento de fuerza.</p>
+                <div class="d-flex align-items-center">
+                  <button class="btn btn-sm btn-outline-secondary me-2">Responder</button>
+                  <button class="btn btn-sm btn-outline-secondary">
+                    <i class="far fa-thumbs-up me-1"></i> 3
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comment form -->
+          <div class="card shadow-sm" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-body p-4">
+              <h3 class="h5 mb-4">Deja tu comentario</h3>
+              <form>
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label for="comment-name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="comment-name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="comment-email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="comment-email" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="comment-text" class="form-label">Comentario</label>
+                    <textarea class="form-control" id="comment-text" rows="4" required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="save-info" checked>
+                      <label class="form-check-label" for="save-info">
+                        Guardar mi nombre y email para la próxima vez
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-danger">Publicar Comentario</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="mb-4">
+            <h2 class="h4 mb-3">Fit<span class="text-danger">Life</span></h2>
+            <p class="text-white-50">
+              Transformando vidas a través del fitness y el bienestar desde
+              2013.
+            </p>
+          </div>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-danger" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-danger" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-danger" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-danger" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Enlaces Rápidos</h3>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="index.html" class="text-decoration-none text-white-50">Inicio</a>
+            </li>
+            <li class="mb-2">
+              <a href="clases.html" class="text-decoration-none text-white-50">Clases</a>
+            </li>
+            <li class="mb-2">
+              <a href="entrenadores.html" class="text-decoration-none text-white-50">Entrenadores</a>
+            </li>
+            <li class="mb-2">
+              <a href="precios.html" class="text-decoration-none text-white-50">Precios</a>
+            </li>
+            <li class="mb-2">
+              <a href="blog.html" class="text-decoration-none text-white-50">Blog</a>
+            </li>
+            <li class="mb-2">
+              <a href="contacto.html" class="text-decoration-none text-white-50">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Contacto</h3>
+          <ul class="list-unstyled text-white-50">
+            <li class="mb-3 d-flex">
+              <i class="fas fa-map-marker-alt me-2 mt-1"></i>
+              <span>Av. Libertad 1234, Ciudad</span>
+            </li>
+            <li class="mb-3 d-flex">
+              <i class="fas fa-phone me-2 mt-1"></i>
+              <span>(123) 456-7890</span>
+            </li>
+            <li class="mb-3 d-flex">
+              <i class="fas fa-envelope me-2 mt-1"></i>
+              <span>info@fitlife.com</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Suscríbete a nuestro boletín</h3>
+          <p class="text-white-50 mb-3">
+            Recibe noticias, consejos y promociones exclusivas.
+          </p>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Tu correo electrónico" required />
+            <button type="submit" class="btn btn-danger">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa con clases de Bootstrap -->
+      <div class="ratio ratio-16x9 mt-5">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.238389258939!2d-65.3058376849666!3d-24.18559038438163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f4e8bd5a9f9%3A0x3e8b5e1b899f4d3f!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy%2C%20Argentina!5e0!3m2!1sen!2sus!4v1627913386325!5m2!1sen!2sus"
+          style="border: 0" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-4 mt-5 border-top border-secondary">
+        <p class="mb-3 mb-md-0">
+          &copy; 2023 FitLife. Todos los derechos reservados.
+        </p>
+        <div>
+          <a href="#" class="text-white-50 text-decoration-none me-3">Política de Privacidad</a>
+          <a href="#" class="text-white-50 text-decoration-none">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- AOS Library for Scroll Animations -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

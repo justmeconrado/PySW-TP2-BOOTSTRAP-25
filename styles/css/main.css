@@ -1,0 +1,534 @@
+/*==================================
+  FITLIFE - HOJA DE ESTILOS PRINCIPAL
+==================================*/
+
+/*----------------------------------
+  1. VARIABLES Y CONFIGURACIÓN RAÍZ
+----------------------------------*/
+:root {
+  /* Colores principales del tema */
+  --primary: #d72638;
+  /* Rojo principal */
+  --primary-dark: #b01f2e;
+  /* Rojo oscuro para hover */
+  --secondary: #2e2e2e;
+  /* Gris oscuro secundario */
+  --light: #f5f5f5;
+  /* Gris claro para fondos */
+  --dark: #1a1a1a;
+  /* Negro para textos y fondos oscuros */
+}
+
+/*----------------------------------
+  2. ESTILOS GENERALES
+----------------------------------*/
+body {
+  font-family: "Poppins", sans-serif;
+  /* Fuente principal del sitio */
+}
+
+/*----------------------------------
+  3. PERSONALIZACIÓN DE BOOTSTRAP
+----------------------------------*/
+/* Colores primarios - Sobreescribe los colores de Bootstrap */
+.bg-primary,
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+/* Colores de peligro (usados como primarios en este tema) */
+.text-danger {
+  color: var(--primary) !important;
+}
+
+.btn-danger {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-danger:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/*----------------------------------
+  4. UTILIDADES DE DISEÑO
+----------------------------------*/
+/* Altura de sección hero - Utilidad personalizada */
+.min-vh-75 {
+  min-height: 75vh;
+  /* 75% de la altura de la ventana */
+}
+
+/*----------------------------------
+  5. EFECTOS DE HOVER Y TRANSICIONES
+----------------------------------*/
+/* Efectos de hover para las tarjetas - Aparición gradual */
+.hover-opacity-100 {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.position-relative:hover .hover-opacity-100 {
+  opacity: 1;
+  /* Muestra el elemento al hacer hover */
+}
+
+.transition-opacity {
+  transition: opacity 0.3s ease;
+  /* Transición suave de opacidad */
+}
+
+/* Animaciones - Efecto de aparición */
+.fade-in {
+  animation: fadeIn 0.5s;
+  /* Aplica la animación fadeIn */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    /* Comienza invisible */
+  }
+
+  to {
+    opacity: 1;
+    /* Termina completamente visible */
+  }
+}
+
+/*----------------------------------
+  6. ESTILOS DE MENÚ Y NAVEGACIÓN
+----------------------------------*/
+/* Estilos para el menú desplegable */
+.dropdown-menu-dark {
+  background-color: var(--secondary);
+  /* Fondo oscuro para menús desplegables */
+}
+
+.dropdown-item:hover {
+  background-color: var(--primary);
+  /* Color de hover para items del menú */
+}
+
+/*----------------------------------
+  7. ESTILOS DE TARJETAS Y CLASES
+----------------------------------*/
+/* Efectos de zoom para tarjetas de clases */
+.class-item .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  /* Evita que la imagen se desborde al hacer zoom */
+}
+
+.class-item .card:hover {
+  transform: translateY(-5px);
+  /* Eleva la tarjeta al hacer hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* Sombra más pronunciada */
+}
+
+.class-item .card-img-top {
+  transition: transform 0.5s ease;
+  /* Transición suave para el zoom */
+}
+
+.class-item .card:hover .card-img-top {
+  transform: scale(1.05);
+  /* Efecto de zoom en la imagen */
+}
+
+/* Estilos para clases destacadas */
+.featured-class {
+  transition: box-shadow 0.3s ease;
+}
+
+.featured-class:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+  /* Sombra más intensa */
+}
+
+/* Estilos para el contenido del hero */
+.hero-content {
+  position: relative;
+  top: 20px;
+  /* Desplazamiento vertical para mejor posicionamiento */
+}
+
+/*----------------------------------
+  8. TARJETAS DE ENTRENADORES (FLIP CARDS)
+----------------------------------*/
+/* Estilos básicos de flip cards - Efecto 3D */
+.flip-card {
+  perspective: 1000px;
+  /* Perspectiva para efecto 3D */
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  /* Duración de la animación de volteo */
+  transform-style: preserve-3d;
+  /* Mantiene el efecto 3D */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Altura fija para tarjetas de entrenadores */
+.trainer-card {
+  min-height: 550px;
+  /* Altura mínima para contenido consistente */
+}
+
+/* Efecto de volteo - Se activa con hover o focus (accesibilidad) */
+.trainer-card.flipped .flip-card-inner,
+.trainer-card:hover .flip-card-inner,
+.trainer-card:focus .flip-card-inner {
+  transform: rotateY(180deg);
+  /* Rota la tarjeta 180 grados */
+}
+
+/* Caras de la tarjeta - Frente y reverso */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  /* Oculta el reverso cuando no está volteado */
+  border-radius: 0.375rem;
+}
+
+.flip-card-front {
+  background-color: #fff;
+  z-index: 1;
+  /* Asegura que el frente esté por encima */
+}
+
+.flip-card-back {
+  background-color: #f8f9fa;
+  transform: rotateY(180deg);
+  /* El reverso comienza volteado */
+  z-index: 0;
+}
+
+/*----------------------------------
+  9. SISTEMA DE CALIFICACIÓN POR ESTRELLAS
+----------------------------------*/
+/* Contenedor principal de estrellas */
+.star-rating {
+  display: inline-flex;
+  /* Alineación en línea con flexbox */
+  flex-direction: row-reverse;
+  /* Invierte el orden para facilitar la selección */
+  justify-content: flex-end;
+}
+
+/* Estilo de las etiquetas de estrellas */
+.star-label {
+  color: #ccc;
+  /* Color por defecto (estrella sin seleccionar) */
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0 0.1rem;
+  transition: color 0.2s ease;
+  /* Transición suave de color */
+}
+
+/* Estilo para estrellas seleccionadas (estado persistente) */
+.star-rating input:checked~.star-label {
+  color: #ffc107;
+  /* Color dorado para estrellas seleccionadas */
+}
+
+/* Estilo para estrellas en hover - Efecto de llenado */
+.star-rating .star-label:hover,
+.star-rating .star-label:hover~.star-label {
+  color: #ffc107 !important;
+  /* Color dorado al pasar el cursor */
+}
+
+/* Asegura que las estrellas seleccionadas mantengan su color */
+.star-rating input:checked~.star-label {
+  color: #ffc107;
+}
+
+/* Mantiene el color de las estrellas seleccionadas cuando no hay hover */
+.star-rating:not(:hover) input:checked~.star-label {
+  color: #ffc107;
+}
+
+/* Configuración alternativa del contenedor de estrellas */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font-size: 1.5rem;
+}
+
+/*----------------------------------
+  10. ESTILOS DE FORMULARIOS
+----------------------------------*/
+/* Estilos de placeholders - Mejora la legibilidad */
+::placeholder {
+  color: #6c757d !important;
+  opacity: 0.8 !important;
+  /* Semitransparente para mejor contraste */
+}
+
+/* Reduce la opacidad del placeholder al enfocar el campo */
+.form-control:focus::placeholder {
+  opacity: 0.6 !important;
+}
+
+/*----------------------------------
+  11. MODO OSCURO
+----------------------------------*/
+/* Estilos generales del modo oscuro */
+.dark-mode,
+body.dark-mode {
+  background-color: #121212;
+  /* Fondo oscuro principal */
+  color: #e0e0e0;
+  /* Texto claro para contraste */
+}
+
+/* Ajustes de fondo para elementos en modo oscuro */
+body.dark-mode .bg-light {
+  background-color: #1e1e1e !important;
+  /* Fondo "claro" en modo oscuro */
+}
+
+body.dark-mode .text-dark {
+  color: var(--light) !important;
+  /* Invierte textos oscuros */
+}
+
+/* Ajustes para tarjetas en modo oscuro */
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  /* Fondo de tarjetas en modo oscuro */
+  border-color: #444;
+  /* Bordes más visibles */
+  color: #e0e0e0;
+}
+
+body.dark-mode .card-body {
+  color: #e0e0e0;
+}
+
+/* Ajustes para textos en modo oscuro */
+body.dark-mode .text-muted {
+  color: #adb5bd !important;
+  /* Texto muted más visible en modo oscuro */
+}
+
+/* Ajustes para flip cards en modo oscuro */
+body.dark-mode .flip-card-front {
+  background-color: #343a40;
+  color: #fff;
+}
+
+body.dark-mode .flip-card-back {
+  background-color: #343a40 !important;
+  color: #fff;
+}
+
+/* Ajustes para iconos sociales en modo oscuro */
+[data-bs-theme="dark"] .trainer-social {
+  color: #f8f9fa !important;
+  /* Iconos sociales más visibles */
+}
+
+/* Ajustes para formularios en modo oscuro */
+body.dark-mode .form-control {
+  background-color: #2d2d2d;
+  /* Fondo de inputs en modo oscuro */
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark-mode .form-control:focus {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+}
+
+body.dark-mode ::placeholder {
+  color: #adb5bd !important;
+  /* Placeholders más visibles */
+  opacity: 0.7 !important;
+}
+
+/* Ajustes para botones en modo oscuro */
+body.dark-mode .btn-outline-danger {
+  color: #ff6b6b;
+  /* Color más brillante para mejor visibilidad */
+  border-color: #ff6b6b;
+}
+
+body.dark-mode .btn-outline-danger:hover,
+body.dark-mode .btn-check:checked+.btn-outline-danger {
+  background-color: #ff6b6b;
+  color: #121212;
+  /* Texto oscuro para contraste */
+}
+
+/* Ajustes para badges en modo oscuro */
+body.dark-mode .badge.bg-secondary {
+  background-color: #444 !important;
+  /* Badges más visibles */
+}
+
+/*----------------------------------
+  12. ESTILOS DE TABLAS EN MODO OSCURO
+----------------------------------*/
+/* Estilos generales de tablas en modo oscuro */
+body.dark-mode .table {
+  color: #e0e0e0;
+  /* Texto claro para tablas */
+  border-color: #444;
+  /* Bordes más visibles */
+}
+
+body.dark-mode .table-bordered {
+  border-color: #444;
+}
+
+body.dark-mode .table-bordered td,
+body.dark-mode .table-bordered th {
+  border-color: #444;
+}
+
+/* Estilos de hover para tablas en modo oscuro */
+body.dark-mode .table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+  /* Efecto hover sutil */
+  color: #e0e0e0;
+}
+
+/* Estilos para cabeceras de tablas en modo oscuro */
+body.dark-mode .table-dark {
+  background-color: #2d2d2d;
+  /* Cabecera más oscura que el cuerpo */
+}
+
+body.dark-mode .table thead.table-dark th {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+/* Estilos para celdas de tablas en modo oscuro */
+body.dark-mode .table tbody td {
+  background-color: #2a2a2a;
+  /* Fondo de celdas */
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark-mode .table tbody td.fw-bold {
+  background-color: #252525;
+  /* Celdas en negrita ligeramente más oscuras */
+}
+
+/* Ajustes para textos en tablas en modo oscuro */
+body.dark-mode .table .text-danger {
+  color: #ff6b6b !important;
+  /* Texto de peligro más brillante */
+}
+
+body.dark-mode .table .small.text-muted {
+  color: #bbb !important;
+  /* Texto pequeño más visible */
+}
+
+/* Selector para celdas con guiones (no disponible) */
+body.dark-mode .table td.text-center:contains("-") {
+  color: #888;
+  /* Color gris para elementos no disponibles */
+}
+
+body.dark-mode .table .small {
+  color: #e0e0e0;
+  /* Texto pequeño en color claro */
+}
+
+/*----------------------------------
+  13. MEDIA QUERIES Y RESPONSIVE
+----------------------------------*/
+/* Ajustes para dispositivos pequeños (móviles) */
+@media (max-width: 576px) {
+  .trainer-card {
+    min-height: 450px;
+    /* Altura reducida en móviles */
+  }
+
+  .star-rating {
+    font-size: 1.25rem;
+    /* Estrellas más pequeñas en móviles */
+  }
+}
+
+/* Ajustes para dispositivos medianos (tablets) */
+@media (min-width: 577px) and (max-width: 991px) {
+  .trainer-card {
+    min-height: 500px;
+    /* Altura media para tablets */
+  }
+}
+
+/*----------------------------------
+  14. ANIMACIONES PERSONALIZADAS
+----------------------------------*/
+/* Animación de entrada desde la derecha (para menú móvil) */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animación de rebote para elementos destacados */
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-20px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s ease infinite;
+}

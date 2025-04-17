@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b01f2e">
+  <title>Clases - FitLife</title>
+  <link rel="icon" href="assets/images/icon-fl.svg" type="image/x-icon">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/css/main.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-3">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/icon-fl.svg" alt="FitLife Logo" class="me-2" height="40">
+        <h1 class="h4 mb-0">Fit<span class="text-danger">Life</span></h1>
+      </a>
+
+      <!-- Botón de hamburguesa para móvil -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú principal -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="clases.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Clases
+            </a>
+            <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end p-3" aria-labelledby="navbarDropdown">
+              <div class="row g-3" style="min-width: 600px">
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Cardio</h6>
+                  <a class="dropdown-item" href="clases.html#spinning">Spinning</a>
+                  <a class="dropdown-item" href="clases.html#zumba">Zumba</a>
+                  <a class="dropdown-item" href="clases.html#hiit">HIIT</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Fuerza</h6>
+                  <a class="dropdown-item" href="clases.html#crossfit">CrossFit</a>
+                  <a class="dropdown-item" href="clases.html#funcional">Funcional</a>
+                  <a class="dropdown-item" href="clases.html#musculacion">Musculación</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Mente-Cuerpo</h6>
+                  <a class="dropdown-item" href="clases.html#yoga">Yoga</a>
+                  <a class="dropdown-item" href="clases.html#pilates">Pilates</a>
+                  <a class="dropdown-item" href="clases.html#meditacion">Meditación</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="entrenadores.html">Entrenadores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="precios.html">Precios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-danger" href="contacto.html">Prueba Gratis</a>
+          </li>
+        </ul>
+
+        <!-- Botón de modo oscuro -->
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="dark-mode-toggle">
+            <label class="form-check-label text-light" for="dark-mode-toggle">
+              <i class="fas fa-sun me-1"></i>/<i class="fas fa-moon ms-1"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="position-relative overflow-hidden bg-dark text-white">
+    <div class="ratio ratio-16x9 position-absolute top-0 start-0 w-100 h-100">
+      <video class="position-absolute w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
+        <source src="assets/videos/classes-hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="position-absolute w-100 h-100 bg-dark opacity-50"></div>
+    <div class="container position-relative py-5 my-5">
+      <div class="row min-vh-50 align-items-center py-5">
+        <div class="col-lg-8 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000"
+          data-aos-delay="200">
+          <h1 class="display-4 fw-bold mb-4">NUESTRAS CLASES</h1>
+          <p class="lead mb-0">
+            Descubre la variedad de actividades que tenemos para ti
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER SECTION -->
+  <section class="py-5">
+    <div class="container py-5" data-aos="fade-up">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Explora Nuestras Clases</h2>
+        <p class="text-muted">
+          Filtra por categoría para encontrar la clase perfecta para ti
+        </p>
+      </div>
+
+      <div class="btn-group d-flex flex-wrap justify-content-center mb-5" role="group" aria-label="Filtros de clases">
+        <input type="radio" class="btn-check" name="filter" id="filter-all" checked data-filter="all">
+        <label class="btn btn-outline-danger" for="filter-all">Todas</label>
+
+        <input type="radio" class="btn-check" name="filter" id="filter-cardio" data-filter="cardio">
+        <label class="btn btn-outline-danger" for="filter-cardio">Cardio</label>
+
+        <input type="radio" class="btn-check" name="filter" id="filter-fuerza" data-filter="fuerza">
+        <label class="btn btn-outline-danger" for="filter-fuerza">Fuerza</label>
+
+        <input type="radio" class="btn-check" name="filter" id="filter-mente" data-filter="mente">
+        <label class="btn btn-outline-danger" for="filter-mente">Mente-Cuerpo</label>
+
+        <input type="radio" class="btn-check" name="filter" id="filter-principiante" data-filter="principiante">
+        <label class="btn btn-outline-danger" for="filter-principiante">Principiante</label>
+
+        <input type="radio" class="btn-check" name="filter" id="filter-intermedio" data-filter="intermedio">
+        <label class="btn btn-outline-danger" for="filter-intermedio">Intermedio</label>
+
+        <input type="radio" class="btn-check" name="filter" id="filter-avanzado" data-filter="avanzado">
+        <label class="btn btn-outline-danger" for="filter-avanzado">Avanzado</label>
+      </div>
+
+      <!-- MASONRY LAYOUT FOR CLASSES -->
+      <div class="row" data-masonry='{"percentPosition": true}' id="classes-grid">
+        <!-- Yoga -->
+        <div id="yoga" class="col-sm-6 col-lg-4 mb-4 class-item" data-category="mente principiante" id="yoga">
+          <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/images/classes/yoga-v.jpg" alt="Clase de Yoga" class="card-img-top" />
+            <div class="card-body">
+              <h3 class="card-title h5">Yoga</h3>
+              <p class="card-text text-muted">
+                Mejora tu flexibilidad y encuentra tu equilibrio interior con
+                nuestras clases de yoga.
+              </p>
+              <div class="d-flex justify-content-between text-muted small mb-3">
+                <span><i class="far fa-clock me-1"></i> 60 min</span>
+                <span><i class="fas fa-signal me-1"></i> Principiante</span>
+              </div>
+              <div class="d-flex gap-2">
+                <span class="badge bg-secondary">Mente-Cuerpo</span>
+                <span class="badge bg-secondary">Flexibilidad</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CrossFit -->
+        <div id="crossfit" class="col-sm-6 col-lg-4 mb-4 class-item" data-category="fuerza intermedio avanzado"
+          id="crossfit">
+          <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/images/classes/crossfit-v.jpg" alt="Clase de CrossFit" class="card-img-top" />
+            <div class="card-body">
+              <h3 class="card-title h5">CrossFit</h3>
+              <p class="card-text text-muted">
+                Entrenamiento funcional de alta intensidad para mejorar tu
+                condición física general.
+              </p>
+              <div class="d-flex justify-content-between text-muted small mb-3">
+                <span><i class="far fa-clock me-1"></i> 45 min</span>
+                <span><i class="fas fa-signal me-1"></i> Intermedio</span>
+              </div>
+              <div class="d-flex gap-2">
+                <span class="badge bg-secondary">Fuerza</span>
+                <span class="badge bg-secondary">Resistencia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spinning -->
+        <div id="spinning" class="col-sm-6 col-lg-4 mb-4 class-item" data-category="cardio principiante intermedio"
+          id="spinning">
+          <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/images/classes/spinning.jpg" alt="Clase de Spinning" class="card-img-top" />
+            <div class="card-body">
+              <h3 class="card-title h5">Spinning</h3>
+              <p class="card-text text-muted">
+                Cardio intenso con música motivadora para quemar calorías y
+                mejorar tu resistencia.
+              </p>
+              <div class="d-flex justify-content-between text-muted small mb-3">
+                <span><i class="far fa-clock me-1"></i> 50 min</span>
+                <span><i class="fas fa-signal me-1"></i> Todos los niveles</span>
+              </div>
+              <div class="d-flex gap-2">
+                <span class="badge bg-secondary">Cardio</span>
+                <span class="badge bg-secondary">Resistencia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pilates -->
+        <div id="pilates" class="col-sm-6 col-lg-4 mb-4 class-item" data-category="mente principiante" id="pilates">
+          <div class="card h-100 shadow-sm" data-aos="flip-left" data-aos-delay="100">
+            <img src="assets/images/classes/pilates.jpg" alt="Clase de Pilates" class="card-img-top" />
+            <div class="card-body">
+              <h3 class="card-title h5">Pilates</h3>
+              <p class="card-text text-muted">
+                Fortalece tu core y mejora tu postura con ejercicios
+                controlados y precisos.
+              </p>
+              <div class="d-flex justify-content-between text-muted small mb-3">
+                <span><i class="far fa-clock me-1"></i> 55 min</span>
+                <span><i class="fas fa-signal me-1"></i> Principiante</span>
+              </div>
+              <div class="d-flex gap-2">
+                <span class="badge bg-secondary">Mente-Cuerpo</span>
+                <span class="badge bg-secondary">Core</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HIIT -->
+        <div id="hiit" class="col-sm-6 col-lg-4 mb-4 class-item" data-category="cardio intermedio avanzado" id="hiit">
+          <div class="card h-100 shadow-sm" data-aos="flip-left" data-aos-delay="200">
+            <img src="assets/images/classes/hiit.jpg" alt="Clase de HIIT" class="card-img-top" />
+            <div class="card-body">
+              <h3 class="card-title h5">HIIT</h3>
+              <p class="card-text text-muted">
+                Entrenamiento por intervalos de alta intensidad para maximizar
+                la quema de calorías.
+              </p>
+              <div class="d-flex justify-content-between text-muted small mb-3">
+                <span><i class="far fa-clock me-1"></i> 30 min</span>
+                <span><i class="fas fa-signal me-1"></i>
+                  Intermedio-Avanzado</span>
+              </div>
+              <div class="d-flex gap-2">
+                <span class="badge bg-secondary">Cardio</span>
+                <span class="badge bg-secondary">Intensidad</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Funcional -->
+        <div id="funcional" class="col-sm-6 col-lg-4 mb-4 class-item" data-category="fuerza principiante intermedio"
+          id="funcional">
+          <div class="card h-100 shadow-sm" data-aos="flip-left" data-aos-delay="300">
+            <img src="assets/images/classes/funcional.jpg" alt="Clase de Entrenamiento Funcional"
+              class="card-img-top" />
+            <div class="card-body">
+              <h3 class="card-title h5">Entrenamiento Funcional</h3>
+              <p class="card-text text-muted">
+                Ejercicios que imitan los movimientos de la vida diaria para
+                mejorar tu fuerza y movilidad.
+              </p>
+              <div class="d-flex justify-content-between text-muted small mb-3">
+                <span><i class="far fa-clock me-1"></i> 45 min</span>
+                <span><i class="fas fa-signal me-1"></i> Todos los niveles</span>
+              </div>
+              <div class="d-flex gap-2">
+                <span class="badge bg-secondary">Fuerza</span>
+                <span class="badge bg-secondary">Funcional</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zumba -->
+        <div id="zumba" class="col-sm-6 col-lg-4 mb-4 class-item" data-category="cardio principiante" id="zumba">
+          <div class="card h-100 shadow-sm" data-aos="zoom-in" data-aos-delay="100">
+            <img src="assets/images/classes/zumba.jpg" alt="Clase de Zumba" class="card-img-top" />
+            <div class="card-body">
+              <h3 class="card-title h5">Zumba</h3>
+              <p class="card-text text-muted">
+                Divertida clase de baile con ritmos latinos para quemar
+                calorías mientras te diviertes.
+              </p>
+              <div class="d-flex justify-content-between text-muted small mb-3">
+                <span><i class="far fa-clock me-1"></i> 60 min</span>
+                <span><i class="fas fa-signal me-1"></i> Principiante</span>
+              </div>
+              <div class="d-flex gap-2">
+                <span class="badge bg-secondary">Cardio</span>
+                <span class="badge bg-secondary">Baile</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Musculación -->
+        <div id="musculacion" class="col-sm-6 col-lg-4 mb-4 class-item" data-category="fuerza intermedio avanzado"
+          id="musculacion">
+          <div class="card h-100 shadow-sm" data-aos="zoom-in" data-aos-delay="200">
+            <img src="assets/images/classes/musculacion.jpg" alt="Clase de Musculación" class="card-img-top" />
+            <div class="card-body">
+              <h3 class="card-title h5">Musculación</h3>
+              <p class="card-text text-muted">
+                Entrenamiento con pesas para desarrollar masa muscular y
+                aumentar la fuerza.
+              </p>
+              <div class="d-flex justify-content-between text-muted small mb-3">
+                <span><i class="far fa-clock me-1"></i> 60 min</span>
+                <span><i class="fas fa-signal me-1"></i>
+                  Intermedio-Avanzado</span>
+              </div>
+              <div class="d-flex gap-2">
+                <span class="badge bg-secondary">Fuerza</span>
+                <span class="badge bg-secondary">Hipertrofia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meditación -->
+        <div id="meditacion" class="col-sm-6 col-lg-4 mb-4 class-item" data-category="mente principiante"
+          id="meditacion">
+          <div class="card h-100 shadow-sm" data-aos="zoom-in" data-aos-delay="300">
+            <img src="assets/images/classes/meditacion.jpg" alt="Clase de Meditación" class="card-img-top" />
+            <div class="card-body">
+              <h3 class="card-title h5">Meditación</h3>
+              <p class="card-text text-muted">
+                Aprende técnicas de respiración y meditación para reducir el
+                estrés y mejorar tu bienestar mental.
+              </p>
+              <div class="d-flex justify-content-between text-muted small mb-3">
+                <span><i class="far fa-clock me-1"></i> 30 min</span>
+                <span><i class="fas fa-signal me-1"></i> Principiante</span>
+              </div>
+              <div class="d-flex gap-2">
+                <span class="badge bg-secondary">Mente-Cuerpo</span>
+                <span class="badge bg-secondary">Relajación</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE SECTION -->
+  <section class="py-5 bg-light">
+    <div class="container py-5" data-aos="fade-up">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Horario de Clases</h2>
+        <p class="text-muted">
+          Planifica tu semana y no te pierdas ninguna clase
+        </p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="table-dark">
+            <tr class="text-center">
+              <th>Hora</th>
+              <th>Lunes</th>
+              <th>Martes</th>
+              <th>Miércoles</th>
+              <th>Jueves</th>
+              <th>Viernes</th>
+              <th>Sábado</th>
+              <th>Domingo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-bold">07:00</td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  CrossFit <i class="fas fa-fire-alt"></i>
+                </div>
+                <div class="small">07:00 - 07:45</div>
+                <div class="small text-muted">Javier</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  HIIT <i class="fas fa-bolt"></i>
+                </div>
+                <div class="small">07:00 - 07:30</div>
+                <div class="small text-muted">Miguel</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  CrossFit <i class="fas fa-fire-alt"></i>
+                </div>
+                <div class="small">07:00 - 07:45</div>
+                <div class="small text-muted">Javier</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  HIIT <i class="fas fa-bolt"></i>
+                </div>
+                <div class="small">07:00 - 07:30</div>
+                <div class="small text-muted">Miguel</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  CrossFit <i class="fas fa-fire-alt"></i>
+                </div>
+                <div class="small">07:00 - 07:45</div>
+                <div class="small text-muted">Javier</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">Funcional</div>
+                <div class="small">07:00 - 07:45</div>
+                <div class="small text-muted">Laura</div>
+              </td>
+              <td class="text-center">-</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">09:00</td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  Yoga <i class="fas fa-spa"></i>
+                </div>
+                <div class="small">09:00 - 10:00</div>
+                <div class="small text-muted">Ana</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">Pilates</div>
+                <div class="small">09:00 - 09:55</div>
+                <div class="small text-muted">Sofía</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  Yoga <i class="fas fa-spa"></i>
+                </div>
+                <div class="small">09:00 - 10:00</div>
+                <div class="small text-muted">Ana</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">Pilates</div>
+                <div class="small">09:00 - 09:55</div>
+                <div class="small text-muted">Sofía</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  Yoga <i class="fas fa-spa"></i>
+                </div>
+                <div class="small">09:00 - 10:00</div>
+                <div class="small text-muted">Ana</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  Yoga <i class="fas fa-spa"></i>
+                </div>
+                <div class="small">09:00 - 10:00</div>
+                <div class="small text-muted">Ana</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">Meditación</div>
+                <div class="small">09:00 - 09:30</div>
+                <div class="small text-muted">Ana</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="fw-bold">12:00</td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">Funcional</div>
+                <div class="small">12:00 - 12:45</div>
+                <div class="small text-muted">Laura</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  Spinning <i class="fas fa-bicycle"></i>
+                </div>
+                <div class="small">12:00 - 12:50</div>
+                <div class="small text-muted">Carlos</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">Funcional</div>
+                <div class="small">12:00 - 12:45</div>
+                <div class="small text-muted">Laura</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  Spinning <i class="fas fa-bicycle"></i>
+                </div>
+                <div class="small">12:00 - 12:50</div>
+                <div class="small text-muted">Carlos</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">Funcional</div>
+                <div class="small">12:00 - 12:45</div>
+                <div class="small text-muted">Laura</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  HIIT <i class="fas fa-bolt"></i>
+                </div>
+                <div class="small">12:00 - 12:30</div>
+                <div class="small text-muted">Miguel</div>
+              </td>
+              <td class="text-center">-</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">17:00</td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  Zumba <i class="fas fa-music"></i>
+                </div>
+                <div class="small">17:00 - 18:00</div>
+                <div class="small text-muted">María</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">Musculación</div>
+                <div class="small">17:00 - 18:00</div>
+                <div class="small text-muted">Roberto</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  Zumba <i class="fas fa-music"></i>
+                </div>
+                <div class="small">17:00 - 18:00</div>
+                <div class="small text-muted">María</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">Musculación</div>
+                <div class="small">17:00 - 18:00</div>
+                <div class="small text-muted">Roberto</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  Zumba <i class="fas fa-music"></i>
+                </div>
+                <div class="small">17:00 - 18:00</div>
+                <div class="small text-muted">María</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  CrossFit <i class="fas fa-fire-alt"></i>
+                </div>
+                <div class="small">17:00 - 17:45</div>
+                <div class="small text-muted">Javier</div>
+              </td>
+              <td class="text-center">-</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">19:00</td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  CrossFit <i class="fas fa-fire-alt"></i>
+                </div>
+                <div class="small">19:00 - 19:45</div>
+                <div class="small text-muted">Javier</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  Yoga <i class="fas fa-spa"></i>
+                </div>
+                <div class="small">19:00 - 20:00</div>
+                <div class="small text-muted">Ana</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  CrossFit <i class="fas fa-fire-alt"></i>
+                </div>
+                <div class="small">19:00 - 19:45</div>
+                <div class="small text-muted">Javier</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  Yoga <i class="fas fa-spa"></i>
+                </div>
+                <div class="small">19:00 - 20:00</div>
+                <div class="small text-muted">Ana</div>
+              </td>
+              <td class="text-center">
+                <div class="fw-bold text-danger">
+                  HIIT <i class="fas fa-bolt"></i>
+                </div>
+                <div class="small">19:00 - 19:30</div>
+                <div class="small text-muted">Miguel</div>
+              </td>
+              <td class="text-center">-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="py-5 bg-danger text-white">
+    <div class="container py-5" data-aos="zoom-in">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-3">¿Listo para probar una clase?</h2>
+          <p class="lead mb-4">
+            Obtén una clase de prueba gratuita hoy mismo
+          </p>
+          <a href="contacto.html" class="btn btn-light btn-lg">Reservar Ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="mb-4">
+            <h2 class="h4 mb-3">Fit<span class="text-danger">Life</span></h2>
+            <p class="text-white-50">
+              Transformando vidas a través del fitness y el bienestar desde
+              2013.
+            </p>
+          </div>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-white" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-white" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-white" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Enlaces Rápidos</h3>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="index.html" class="text-decoration-none text-white-50">Inicio</a>
+            </li>
+            <li class="mb-2">
+              <a href="clases.html" class="text-decoration-none text-white-50">Clases</a>
+            </li>
+            <li class="mb-2">
+              <a href="entrenadores.html" class="text-decoration-none text-white-50">Entrenadores</a>
+            </li>
+            <li class="mb-2">
+              <a href="precios.html" class="text-decoration-none text-white-50">Precios</a>
+            </li>
+            <li class="mb-2">
+              <a href="blog.html" class="text-decoration-none text-white-50">Blog</a>
+            </li>
+            <li class="mb-2">
+              <a href="contacto.html" class="text-decoration-none text-white-50">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Contacto</h3>
+          <ul class="list-unstyled text-white-50">
+            <li class="mb-3 d-flex">
+              <i class="fas fa-map-marker-alt me-2 mt-1"></i>
+              <span>Av. Libertad 1234, Ciudad</span>
+            </li>
+            <li class="mb-3 d-flex">
+              <i class="fas fa-phone me-2 mt-1"></i>
+              <span>(123) 456-7890</span>
+            </li>
+            <li class="mb-3 d-flex">
+              <i class="fas fa-envelope me-2 mt-1"></i>
+              <span>info@fitlife.com</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Suscríbete a nuestro boletín</h3>
+          <p class="text-white-50 mb-3">
+            Recibe noticias, consejos y promociones exclusivas.
+          </p>
+          <form id="newsletter-form" class="needs-validation" novalidate>
+            <div class="input-group">
+              <input type="email" class="form-control" id="newsletter-email" placeholder="Tu correo electrónico"
+                required />
+              <button type="submit" class="btn btn-danger" id="subscribe-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+              <div class="invalid-feedback">
+                Por favor ingresa un correo electrónico válido.
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="ratio ratio-16x9 mt-5">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.238389258939!2d-65.3058376849666!3d-24.18559038438163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f4e8bd5a9f9%3A0x3e8b5e1b899f4d3f!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy%2C%20Argentina!5e0!3m2!1sen!2sus!4v1627913386325!5m2!1sen!2sus"
+            style="border: 0" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-4 mt-4 border-top border-secondary">
+          <p class="mb-2 mb-md-0 text-white-50">
+            &copy; 2025 FitLife. Todos los derechos reservados.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white-50 text-decoration-none">Política de Privacidad</a>
+            <a href="#" class="text-white-50 text-decoration-none">Términos y Condiciones</a>
+          </div>
+        </div>
+      </div>
+  </footer>
+  <!-- Footer scripts -->
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery for additional effects -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- imagesLoaded -->
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <!-- Masonry -->
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+    crossorigin="anonymous"></script>
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

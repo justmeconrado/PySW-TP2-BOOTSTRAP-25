@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b01f2e">
+  <title>FitLife - Tu gimnasio de confianza</title>
+  <link rel="icon" href="assets/images/icon-fl.svg">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/css/main.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/css/main.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-3">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/icon-fl.svg" alt="FitLife Logo" class="me-2" height="40">
+        <h1 class="h4 mb-0">Fit<span class="text-danger">Life</span></h1>
+      </a>
+
+      <!-- Botón de hamburguesa para móvil -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú principal -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="clases.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Clases
+            </a>
+            <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end p-3" aria-labelledby="navbarDropdown">
+              <div class="row g-3" style="min-width: 600px">
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Cardio</h6>
+                  <a class="dropdown-item" href="clases.html#spinning">Spinning</a>
+                  <a class="dropdown-item" href="clases.html#zumba">Zumba</a>
+                  <a class="dropdown-item" href="clases.html#hiit">HIIT</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Fuerza</h6>
+                  <a class="dropdown-item" href="clases.html#crossfit">CrossFit</a>
+                  <a class="dropdown-item" href="clases.html#funcional">Funcional</a>
+                  <a class="dropdown-item" href="clases.html#musculacion">Musculación</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Mente-Cuerpo</h6>
+                  <a class="dropdown-item" href="clases.html#yoga">Yoga</a>
+                  <a class="dropdown-item" href="clases.html#pilates">Pilates</a>
+                  <a class="dropdown-item" href="clases.html#meditacion">Meditación</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="entrenadores.html">Entrenadores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="precios.html">Precios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-danger" href="contacto.html">Prueba Gratis</a>
+          </li>
+        </ul>
+
+        <!-- Botón de modo oscuro -->
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="dark-mode-toggle">
+            <label class="form-check-label text-light" for="dark-mode-toggle">
+              <i class="fas fa-sun me-1"></i>/<i class="fas fa-moon ms-1"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="position-relative overflow-hidden bg-dark text-white">
+      <div class="ratio ratio-16x9 position-absolute top-0 start-0 w-100 h-100">
+        <video class="position-absolute w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
+          <source src="assets/videos/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="position-absolute w-100 h-100 bg-dark opacity-50"></div>
+      <div class="container position-relative py-5 my-5">
+        <div class="row min-vh-75 align-items-center py-5">
+          <div class="col-lg-8 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000"
+            data-aos-delay="200">
+            <h2 class="display-3 fw-bold mb-4">
+              TRANSFORMA TU CUERPO<br>TRANSFORMA TU VIDA
+            </h2>
+            <p class="lead mb-4">
+              Únete a FitLife y descubre tu mejor versión
+            </p>
+            <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+              <a href="precios.html" class="btn btn-danger btn-lg px-4">Ver Planes</a>
+              <a href="clases.html" class="btn btn-outline-light btn-lg px-4">Explorar Clases</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="py-5 bg-light">
+      <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="fw-bold">¿Por qué elegir FitLife?</h2>
+          <p class="text-muted">Descubre lo que nos hace diferentes</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body text-center p-4">
+                <div class="rounded-circle bg-danger text-white d-inline-flex p-3 mb-4">
+                  <i class="fas fa-hand-sparkles fa-2x"></i>
+                </div>
+                <h3 class="card-title h4 mb-3">Entrenadores Expertos</h3>
+                <p class="card-text text-muted mb-0">
+                  Nuestro equipo de profesionales certificados te guiará en
+                  cada paso de tu entrenamiento.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-body text-center p-4">
+                <div class="rounded-circle bg-danger text-white d-inline-flex p-3 mb-4">
+                  <i class="far fa-clock fa-2x"></i>
+                </div>
+                <h3 class="card-title h4 mb-3">Horarios Flexibles</h3>
+                <p class="card-text text-muted mb-0">
+                  Abierto todos los días con horarios extendidos para
+                  adaptarnos a tu rutina diaria.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-body text-center p-4">
+                <div class="rounded-circle bg-danger text-white d-inline-flex p-3 mb-4">
+                  <i class="fas fa-dumbbell fa-2x"></i>
+                </div>
+                <h3 class="card-title h4 mb-3">Instalaciones Premium</h3>
+                <p class="card-text text-muted mb-0">
+                  Equipamiento de última generación en un espacio moderno y
+                  confortable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASSES SECTION -->
+    <section class="py-5">
+      <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="fw-bold">Nuestras Clases</h2>
+          <p class="text-muted">Encuentra la actividad perfecta para ti</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+              <img src="assets/images/classes/yoga.jpg" alt="Clase de Yoga" class="card-img-top" />
+              <div class="card-body p-4">
+                <h3 class="card-title h5 mb-3">Yoga</h3>
+                <p class="card-text text-muted mb-3">
+                  Conecta cuerpo y mente con nuestras clases de yoga para
+                  todos los niveles.
+                </p>
+                <div class="d-flex justify-content-between text-muted small">
+                  <span><i class="far fa-clock me-1"></i> 60 min</span>
+                  <span><i class="fas fa-signal me-1"></i> Todos los
+                    niveles</span>
+                </div>
+                <div class="text-center mt-3">
+                  <a href="clases.html#yoga" class="btn btn-outline-danger">Ver Detalles</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+              <img src="assets/images/classes/crossfit.jpg" alt="Clase de CrossFit" class="card-img-top" />
+              <div class="card-body p-4">
+                <h3 class="card-title h5 mb-3">CrossFit</h3>
+                <p class="card-text text-muted mb-3">
+                  Entrenamiento funcional de alta intensidad para mejorar tu
+                  condición física.
+                </p>
+                <div class="d-flex justify-content-between text-muted small">
+                  <span><i class="far fa-clock me-1"></i> 45 min</span>
+                  <span><i class="fas fa-signal me-1"></i> Intermedio</span>
+                </div>
+                <div class="text-center mt-3">
+                  <a href="clases.html#crossfit" class="btn btn-outline-danger">Ver Detalles</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+              <img src="assets/images/classes/spinning.jpg" alt="Clase de Spinning" class="card-img-top" />
+              <div class="card-body p-4">
+                <h3 class="card-title h5 mb-3">Spinning</h3>
+                <p class="card-text text-muted mb-3">
+                  Cardio intenso con música motivadora para quemar calorías.
+                </p>
+                <div class="d-flex justify-content-between text-muted small">
+                  <span><i class="far fa-clock me-1"></i> 50 min</span>
+                  <span><i class="fas fa-signal me-1"></i> Todos los
+                    niveles</span>
+                </div>
+                <div class="text-center mt-3">
+                  <a href="clases.html#spinning" class="btn btn-outline-danger">Ver Detalles</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+          <a href="clases.html" class="btn btn-danger btn-lg">Ver Todas las Clases</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAINERS SECTION -->
+    <section class="py-5">
+      <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="fw-bold">Nuestros Entrenadores</h2>
+          <p class="text-muted">
+            Profesionales certificados listos para guiarte
+          </p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+              <img src="assets/images/trainers/trainer-jm.jpg" alt="Entrenador Javier Méndez" class="card-img-top"
+                style="height: 300px; object-fit: cover" />
+              <div class="card-body text-center p-4">
+                <h3 class="card-title h5 mb-2">Javier Méndez</h3>
+                <p class="card-text text-muted mb-3">
+                  Especialista en CrossFit
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="text-danger trainer-social" aria-label="Instagram de Javier">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" class="text-danger trainer-social" aria-label="Twitter de Javier">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+              <img src="assets/images/trainers/trainer-al.jpg" alt="Entrenadora Ana López" class="card-img-top"
+                style="height: 300px; object-fit: cover" />
+              <div class="card-body text-center p-4">
+                <h3 class="card-title h5 mb-2">Ana López</h3>
+                <p class="card-text text-muted mb-3">Instructora de Yoga</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="text-danger trainer-social" aria-label="Instagram de Ana">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" class="text-danger trainer-social" aria-label="Twitter de Ana">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+              <img src="assets/images/trainers/trainer-ml.jpg" alt="Entrenador Miguel Torres" class="card-img-top"
+                style="height: 300px; object-fit: cover" />
+              <div class="card-body text-center p-4">
+                <h3 class="card-title h5 mb-2">Miguel Torres</h3>
+                <p class="card-text text-muted mb-3">
+                  Especialista en Nutrición
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="text-danger trainer-social" aria-label="Instagram de Miguel">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" class="text-danger trainer-social" aria-label="Twitter de Miguel">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+          <a href="entrenadores.html" class="btn btn-danger btn-lg">Conoce a Todos los Entrenadores</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="py-5 bg-dark text-white">
+      <div class="container py-5">
+        <!-- Encabezado de la sección de estadísticas -->
+        <div class="text-center mb-4" data-aos="fade-up">
+          <h2 class="fw-bold">Nuestros Números</h2>
+          <p class="text-muted text-white-50">Creciendo juntos año tras año</p>
+        </div>
+        <!-- Contenedor de estadísticas en formato de cuadrícula responsive -->
+        <div class="row g-4 text-center">
+          <!-- Estadística 1: Socios Activos -->
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="display-4 fw-bold mb-2" data-count="500">0</div>
+            <p class="mb-0">Socios Activos</p>
+          </div>
+          <!-- Estadística 2: Clases Semanales -->
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="display-4 fw-bold mb-2" data-count="30">0</div>
+            <p class="mb-0">Clases Semanales</p>
+          </div>
+          <!-- Estadística 3: Entrenadores Expertos -->
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="display-4 fw-bold mb-2" data-count="15">0</div>
+            <p class="mb-0">Entrenadores Expertos</p>
+          </div>
+          <!-- Estadística 4: Años de Experiencia -->
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="display-4 fw-bold mb-2" data-count="10">0</div>
+            <p class="mb-0">Años de Experiencia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-5 bg-light">
+      <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="fw-bold">Lo que dicen nuestros socios</h2>
+          <p class="text-muted">Experiencias reales de nuestra comunidad</p>
+        </div>
+
+        <div id="testimonialCarousel" class="carousel carousel-dark slide" data-aos="fade-up" data-aos-delay="200">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Testimonio 1"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"
+              aria-label="Testimonio 2"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"
+              aria-label="Testimonio 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4 p-md-5">
+                  <div class="row align-items-center">
+                    <div class="col-md-4 mb-4 mb-md-0 text-center">
+                      <img src="assets/images/home/testimonial-1.jpg" alt="María García" class="img-fluid rounded-pill"
+                        style="max-width: 150px" />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="text-warning mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <p class="lead mb-3">
+                        "Desde que me uní a FitLife hace 6 meses, he perdido
+                        15 kilos y me siento con más energía que nunca. Los
+                        entrenadores son increíbles y la comunidad es muy
+                        motivadora."
+                      </p>
+                      <div>
+                        <h4 class="h5 mb-1">María García</h4>
+                        <p class="text-muted small mb-0">Socia desde 2023</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="10000">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4 p-md-5">
+                  <div class="row align-items-center">
+                    <div class="col-md-4 mb-4 mb-md-0 text-center">
+                      <img src="assets/images/home/testimonial-2.jpg" alt="Carlos Rodríguez"
+                        class="img-fluid rounded-pill" style="max-width: 150px" />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="text-warning mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <p class="lead mb-3">
+                        "Las clases de CrossFit son desafiantes pero muy
+                        divertidas. He mejorado mi resistencia y fuerza
+                        considerablemente. El ambiente es inmejorable y los
+                        entrenadores están siempre pendientes de tu técnica."
+                      </p>
+                      <div>
+                        <h4 class="h5 mb-1">Carlos Rodríguez</h4>
+                        <p class="text-muted small mb-0">Socio desde 2022</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="10000">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4 p-md-5">
+                  <div class="row align-items-center">
+                    <div class="col-md-4 mb-4 mb-md-0 text-center">
+                      <img src="assets/images/home/testimonial-3.jpg" alt="Laura Martínez"
+                        class="img-fluid rounded-pill" style="max-width: 150px" />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="text-warning mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <p class="lead mb-3">
+                        "Las clases de yoga me han ayudado a reducir el estrés
+                        y mejorar mi flexibilidad. El gimnasio tiene
+                        instalaciones modernas y limpias, y el personal es muy
+                        amable y profesional."
+                      </p>
+                      <div>
+                        <h4 class="h5 mb-1">Laura Martínez</h4>
+                        <p class="text-muted small mb-0">Socia desde 2021</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-5 bg-danger text-white">
+      <div class="container py-5">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8" data-aos="zoom-in">
+            <h2 class="display-5 fw-bold mb-3">
+              ¿Listo para transformar tu vida?
+            </h2>
+            <p class="lead mb-4">
+              Únete hoy y obtén una semana de prueba gratuita
+            </p>
+            <a href="contacto.html" class="btn btn-light btn-lg px-5">Comenzar Ahora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="mb-4">
+            <h2 class="h4 mb-3">Fit<span class="text-danger">Life</span></h2>
+            <p class="text-white-50">
+              Transformando vidas a través del fitness y el bienestar desde
+              2013.
+            </p>
+          </div>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-white" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-white" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-white" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Enlaces Rápidos</h3>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="index.html" class="text-decoration-none text-white-50">Inicio</a>
+            </li>
+            <li class="mb-2">
+              <a href="clases.html" class="text-decoration-none text-white-50">Clases</a>
+            </li>
+            <li class="mb-2">
+              <a href="entrenadores.html" class="text-decoration-none text-white-50">Entrenadores</a>
+            </li>
+            <li class="mb-2">
+              <a href="precios.html" class="text-decoration-none text-white-50">Precios</a>
+            </li>
+            <li class="mb-2">
+              <a href="blog.html" class="text-decoration-none text-white-50">Blog</a>
+            </li>
+            <li class="mb-2">
+              <a href="contacto.html" class="text-decoration-none text-white-50">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Contacto</h3>
+          <ul class="list-unstyled text-white-50">
+            <li class="mb-3 d-flex">
+              <i class="fas fa-map-marker-alt me-2 mt-1"></i>
+              <span>Av. Libertad 1234, Ciudad</span>
+            </li>
+            <li class="mb-3 d-flex">
+              <i class="fas fa-phone me-2 mt-1"></i>
+              <span>(123) 456-7890</span>
+            </li>
+            <li class="mb-3 d-flex">
+              <i class="fas fa-envelope me-2 mt-1"></i>
+              <span>info@fitlife.com</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Suscríbete a nuestro boletín</h3>
+          <p class="text-white-50 mb-3">
+            Recibe noticias, consejos y promociones exclusivas.
+          </p>
+          <form id="newsletter-form" class="needs-validation" novalidate>
+            <div class="input-group">
+              <input type="email" class="form-control" id="newsletter-email" placeholder="Tu correo electrónico"
+                required>
+              <button type="submit" class="btn btn-danger" id="subscribe-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+              <div class="invalid-feedback">
+                Por favor ingresa un correo electrónico válido.
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="ratio ratio-16x9 mt-5">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.238389258939!2d-65.3058376849666!3d-24.18559038438163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f4e8bd5a9f9%3A0x3e8b5e1b899f4d3f!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy%2C%20Argentina!5e0!3m2!1sen!2sus!4v1627913386325!5m2!1sen!2sus"
+            style="border: 0" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-4 mt-4 border-top border-secondary">
+          <p class="mb-2 mb-md-0 text-white-50">
+            &copy; 2025 FitLife. Todos los derechos reservados.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white-50 text-decoration-none">Política de Privacidad</a>
+            <a href="#" class="text-white-50 text-decoration-none">Términos y Condiciones</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Footer scripts -->
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

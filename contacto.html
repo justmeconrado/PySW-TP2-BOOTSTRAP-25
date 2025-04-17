@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b01f2e" />
+  <title>Contacto - FitLife</title>
+  <link rel="icon" href="assets/images/icon-fl.svg" type="image/x-icon" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/css/main.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-3">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/icon-fl.svg" alt="FitLife Logo" class="me-2" height="40" />
+        <h1 class="h4 mb-0">Fit<span class="text-danger">Life</span></h1>
+      </a>
+
+      <!-- Botón de hamburguesa para móvil -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú principal -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="clases.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Clases
+            </a>
+            <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end p-3" aria-labelledby="navbarDropdown">
+              <div class="row g-3" style="min-width: 600px">
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Cardio</h6>
+                  <a class="dropdown-item" href="clases.html#spinning">Spinning</a>
+                  <a class="dropdown-item" href="clases.html#zumba">Zumba</a>
+                  <a class="dropdown-item" href="clases.html#hiit">HIIT</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Fuerza</h6>
+                  <a class="dropdown-item" href="clases.html#crossfit">CrossFit</a>
+                  <a class="dropdown-item" href="clases.html#funcional">Funcional</a>
+                  <a class="dropdown-item" href="clases.html#musculacion">Musculación</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Mente-Cuerpo</h6>
+                  <a class="dropdown-item" href="clases.html#yoga">Yoga</a>
+                  <a class="dropdown-item" href="clases.html#pilates">Pilates</a>
+                  <a class="dropdown-item" href="clases.html#meditacion">Meditación</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="entrenadores.html">Entrenadores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="precios.html">Precios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-danger" href="contacto.html">Prueba Gratis</a>
+          </li>
+        </ul>
+
+        <!-- Botón de modo oscuro -->
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="dark-mode-toggle" />
+            <label class="form-check-label text-light" for="dark-mode-toggle">
+              <i class="fas fa-sun me-1"></i>/<i class="fas fa-moon ms-1"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="position-relative overflow-hidden bg-dark text-white">
+    <div class="ratio ratio-16x9 position-absolute top-0 start-0 w-100 h-100">
+      <video class="position-absolute w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
+        <source src="assets/videos/contact-hero.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="position-absolute w-100 h-100 bg-dark opacity-50"></div>
+    <div class="container position-relative py-5 my-5">
+      <div class="row min-vh-50 align-items-center py-5">
+        <div class="col-lg-8 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
+          <h1 class="display-4 fw-bold mb-4">CONTACTO</h1>
+          <p class="lead mb-0">Estamos aquí para ayudarte. ¡Contáctanos!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="py-5">
+    <div class="container py-5">
+      <div class="row g-5">
+        <!-- Contact Info -->
+        <div class="col-lg-5" data-aos="fade-up">
+          <h3 class="fw-bold mb-4">Información de Contacto</h3>
+
+          <div class="mb-5">
+            <div class="d-flex mb-4">
+              <div class="text-danger fs-4 me-3">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4 class="h5 mb-1">Dirección</h4>
+                <p class="text-muted mb-0">Av. Libertad 1234, Ciudad</p>
+              </div>
+            </div>
+
+            <div class="d-flex mb-4">
+              <div class="text-danger fs-4 me-3">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="h5 mb-1">Teléfono</h4>
+                <p class="text-muted mb-0">(123) 456-7890</p>
+              </div>
+            </div>
+
+            <div class="d-flex mb-4">
+              <div class="text-danger fs-4 me-3">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="h5 mb-1">Email</h4>
+                <p class="text-muted mb-0">info@fitlife.com</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="fw-bold mb-4">Horario de Atención</h3>
+          <div class="card shadow-sm mb-5">
+            <div class="card-body">
+              <div class="row mb-2">
+                <div class="col-6 fw-medium">Lunes - Viernes:</div>
+                <div class="col-6 text-end">6:00 AM - 10:00 PM</div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-6 fw-medium">Sábado:</div>
+                <div class="col-6 text-end">7:00 AM - 8:00 PM</div>
+              </div>
+              <div class="row">
+                <div class="col-6 fw-medium">Domingo:</div>
+                <div class="col-6 text-end">8:00 AM - 6:00 PM</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="fw-bold mb-3">Síguenos</h3>
+          <div class="d-flex gap-3 mb-4">
+            <a href="#" class="text-danger fs-4" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-danger fs-4" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-danger fs-4" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-danger fs-4" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+          <div class="card shadow-sm">
+            <div class="card-body p-4 p-lg-5">
+              <h3 class="fw-bold mb-4">Envíanos un Mensaje</h3>
+              <form id="contactForm">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Tu nombre" required />
+                    <div class="invalid-feedback">Por favor ingresa tu nombre</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Tu email" required />
+                    <div class="invalid-feedback">Por favor ingresa un email válido</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Tu teléfono"
+                      pattern="[0-9]{9,}" title="Ingresa un número de teléfono válido" />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="subject" class="form-label">Asunto</label>
+                    <select id="subject" name="subject" class="form-select" required>
+                      <option value="" disabled selected>
+                        Selecciona un asunto
+                      </option>
+                      <option value="info">Información General</option>
+                      <option value="membership">Membresías</option>
+                      <option value="classes">Clases</option>
+                      <option value="trial">Prueba Gratuita</option>
+                      <option value="other">Otro</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea id="message" name="message" class="form-control" rows="5" placeholder="Tu mensaje"
+                      required></textarea>
+                    <div class="invalid-feedback">Por favor ingresa tu mensaje</div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="terms" name="terms" required />
+                      <label class="form-check-label" for="terms">
+                        Acepto la <a href="#">política de privacidad</a> y los
+                        <a href="#">términos y condiciones</a>.
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-danger">
+                      <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                      <span class="button-text">Enviar Mensaje</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section class="py-5 bg-light">
+    <div class="container py-5" data-aos="fade-up">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Encuéntranos</h2>
+        <p class="text-muted">Visítanos en nuestra ubicación</p>
+      </div>
+
+      <div class="ratio ratio-21x9" style="max-height: 400px">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.238389258939!2d-65.3058376849666!3d-24.18559038438163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f4e8bd5a9f9%3A0x3e8b5e1b899f4d3f!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy%2C%20Argentina!5e0!3m2!1sen!2sus!4v1627913386325!5m2!1sen!2sus"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIRMATION MODAL -->
+  <div class="modal fade" id="confirmation-modal" tabindex="-1" aria-labelledby="confirmationModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center p-5">
+          <div class="text-success mb-4">
+            <i class="fas fa-check-circle fa-4x"></i>
+          </div>
+          <h2 class="modal-title fs-4 fw-bold mb-3" id="confirmationModalLabel">
+            ¡Mensaje Enviado!
+          </h2>
+          <p class="mb-4">
+            Gracias por contactarnos. Hemos recibido tu mensaje y te
+            responderemos lo antes posible.
+          </p>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="mb-4">
+            <h2 class="h4 mb-3">Fit<span class="text-danger">Life</span></h2>
+            <p class="text-white-50">
+              Transformando vidas a través del fitness y el bienestar desde
+              2013.
+            </p>
+          </div>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-white" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-white" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-white" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Enlaces Rápidos</h3>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="index.html" class="text-decoration-none text-white-50">Inicio</a>
+            </li>
+            <li class="mb-2">
+              <a href="clases.html" class="text-decoration-none text-white-50">Clases</a>
+            </li>
+            <li class="mb-2">
+              <a href="entrenadores.html" class="text-decoration-none text-white-50">Entrenadores</a>
+            </li>
+            <li class="mb-2">
+              <a href="precios.html" class="text-decoration-none text-white-50">Precios</a>
+            </li>
+            <li class="mb-2">
+              <a href="blog.html" class="text-decoration-none text-white-50">Blog</a>
+            </li>
+            <li class="mb-2">
+              <a href="contacto.html" class="text-decoration-none text-white-50">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Contacto</h3>
+          <ul class="list-unstyled text-white-50">
+            <li class="mb-3 d-flex">
+              <i class="fas fa-map-marker-alt me-2 mt-1"></i>
+              <span>Av. Libertad 1234, Ciudad</span>
+            </li>
+            <li class="mb-3 d-flex">
+              <i class="fas fa-phone me-2 mt-1"></i>
+              <span>(123) 456-7890</span>
+            </li>
+            <li class="mb-3 d-flex">
+              <i class="fas fa-envelope me-2 mt-1"></i>
+              <span>info@fitlife.com</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h5 mb-3">Suscríbete a nuestro boletín</h3>
+          <p class="text-white-50 mb-3">
+            Recibe noticias, consejos y promociones exclusivas.
+          </p>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Tu correo electrónico" required />
+            <button type="submit" class="btn btn-danger">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-4 mt-4 border-top border-secondary">
+        <p class="mb-2 mb-md-0 text-white-50">
+          &copy; 2025 FitLife. Todos los derechos reservados.
+        </p>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-white-50 text-decoration-none">Política de Privacidad</a>
+          <a href="#" class="text-white-50 text-decoration-none">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Footer scripts -->
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- AOS Library for Scroll Animations -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="js/main.js" type="module"></script>
+</body>
+
+</html>
