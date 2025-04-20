@@ -190,8 +190,7 @@ body {
 
 /* Altura fija para tarjetas de entrenadores */
 .trainer-card {
-  min-height: 550px;
-  /* Altura mínima para contenido consistente */
+  min-height: 500px;
 }
 
 /* Efecto de volteo - Se activa con hover o focus (accesibilidad) */
@@ -227,6 +226,19 @@ body {
   /* El reverso comienza volteado */
   z-index: 0;
 }
+@media (max-width: 767.98px) {
+  .trainer-card {
+    height: auto;
+  }
+
+  .flip-card {
+    height: 500px;
+  }
+
+ .flip-card-inner {
+    height: auto;
+  }
+}
 
 /*----------------------------------
   9. SISTEMA DE CALIFICACIÓN POR ESTRELLAS
@@ -252,25 +264,25 @@ body {
 }
 
 /* Estilo para estrellas seleccionadas (estado persistente) */
-.star-rating input:checked~.star-label {
+.star-rating input:checked ~ .star-label {
   color: #ffc107;
   /* Color dorado para estrellas seleccionadas */
 }
 
 /* Estilo para estrellas en hover - Efecto de llenado */
 .star-rating .star-label:hover,
-.star-rating .star-label:hover~.star-label {
+.star-rating .star-label:hover ~ .star-label {
   color: #ffc107 !important;
   /* Color dorado al pasar el cursor */
 }
 
 /* Asegura que las estrellas seleccionadas mantengan su color */
-.star-rating input:checked~.star-label {
+.star-rating input:checked ~ .star-label {
   color: #ffc107;
 }
 
 /* Mantiene el color de las estrellas seleccionadas cuando no hay hover */
-.star-rating:not(:hover) input:checked~.star-label {
+.star-rating:not(:hover) input:checked ~ .star-label {
   color: #ffc107;
 }
 
@@ -383,7 +395,7 @@ body.dark-mode .btn-outline-danger {
 }
 
 body.dark-mode .btn-outline-danger:hover,
-body.dark-mode .btn-check:checked+.btn-outline-danger {
+body.dark-mode .btn-check:checked + .btn-outline-danger {
   background-color: #ff6b6b;
   color: #121212;
   /* Texto oscuro para contraste */
@@ -434,6 +446,26 @@ body.dark-mode .table thead.table-dark th {
   border-color: #444;
 }
 
+/* Estilos para el modal para modo oscuro */
+body.dark-mode .modal-content {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark-mode .modal-header,
+body.dark-mode .modal-footer {
+  border-color: #444;
+}
+
+body.dark-mode .modal .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+body.dark-mode .text-success {
+  color: #4cd964 !important;
+}
+
 /* Estilos para celdas de tablas en modo oscuro */
 body.dark-mode .table tbody td {
   background-color: #2a2a2a;
@@ -456,12 +488,6 @@ body.dark-mode .table .text-danger {
 body.dark-mode .table .small.text-muted {
   color: #bbb !important;
   /* Texto pequeño más visible */
-}
-
-/* Selector para celdas con guiones (no disponible) */
-body.dark-mode .table td.text-center:contains("-") {
-  color: #888;
-  /* Color gris para elementos no disponibles */
 }
 
 body.dark-mode .table .small {
@@ -511,7 +537,6 @@ body.dark-mode .table .small {
 
 /* Animación de rebote para elementos destacados */
 @keyframes bounce {
-
   0%,
   20%,
   50%,

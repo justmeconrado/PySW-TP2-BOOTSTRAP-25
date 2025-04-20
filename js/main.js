@@ -140,12 +140,12 @@ function initTrainersPageFeatures() {
 
   // Animación de barras de progreso
   // Trigger animation initially for bars potentially visible without flipping
-  animateProgressBars('.flip-card-back .progress-bar');
+  animateProgressBars(".flip-card-back .progress-bar");
 
   // Re-animate progress bars when a card is flipped (hover/focus)
-  $('.trainer-card').on('mouseenter focus', function () {
+  $(".trainer-card").on("mouseenter focus", function () {
     // Find progress bars only within the currently hovered/focused card's back face
-    const barsInCard = $(this).find('.flip-card-back .progress-bar');
+    const barsInCard = $(this).find(".flip-card-back .progress-bar");
     // Use a slight delay to allow the flip animation to start
     setTimeout(() => animateProgressBars(barsInCard), 300);
   });
@@ -196,10 +196,21 @@ function initContactPageFeatures() {
  * Inicializa carrusel de testimonios con desplazamiento automático
  */
 function initTestimonialCarousel() {
-  // Usar API de carrusel de Bootstrap
-  $("#testimonialCarousel").carousel({
-    interval: 10000,
-  });
+  // Usar API de carrusel de Bootstrap con opciones explícitas
+  const carousel = $("#testimonialCarousel");
+  
+  // Verificar si el carrusel existe en la página
+  if (carousel.length) {
+    carousel.carousel({
+      interval: 5000,  // Establecer intervalo a 5 segundos (más corto para pruebas)
+      ride: 'carousel' // Iniciar automáticamente
+    });
+    
+    // Forzar el inicio del carrusel
+    carousel.carousel('cycle');
+    
+    console.log("Carrusel de testimonios inicializado");
+  }
 }
 
 /**
@@ -305,47 +316,51 @@ function updateBlogDarkModeStyles() {
   const isDarkMode = document.body.classList.contains("dark-mode");
 
   // Paginación del blog
-  $('.pagination .page-link').each(function () {
+  $(".pagination .page-link").each(function () {
     if (isDarkMode) {
-      $(this).addClass('bg-dark text-light border-secondary');
+      $(this).addClass("bg-dark text-light border-secondary");
     } else {
-      $(this).removeClass('bg-dark text-light border-secondary');
+      $(this).removeClass("bg-dark text-light border-secondary");
     }
   });
 
   // Categorías del blog
-  $('.filter-category').each(function () {
+  $(".filter-category").each(function () {
     if (isDarkMode) {
-      $(this).removeClass('text-dark').addClass('text-light');
+      $(this).removeClass("text-dark").addClass("text-light");
     } else {
-      $(this).removeClass('text-light').addClass('text-dark');
+      $(this).removeClass("text-light").addClass("text-dark");
     }
   });
 
   // Elementos de lista en la barra lateral
-  $('.list-group-item').each(function () {
+  $(".list-group-item").each(function () {
     if (isDarkMode) {
-      $(this).addClass('bg-dark text-light border-secondary');
+      $(this).addClass("bg-dark text-light border-secondary");
     } else {
-      $(this).removeClass('bg-dark text-light border-secondary');
+      $(this).removeClass("bg-dark text-light border-secondary");
     }
   });
 
   // Artículos recientes
-  $('.list-group-item-action').each(function () {
+  $(".list-group-item-action").each(function () {
     if (isDarkMode) {
-      $(this).addClass('bg-dark text-light border-secondary');
+      $(this).addClass("bg-dark text-light border-secondary");
     } else {
-      $(this).removeClass('bg-dark text-light border-secondary');
+      $(this).removeClass("bg-dark text-light border-secondary");
     }
   });
 
   // Etiquetas
-  $('.badge.bg-light.text-dark').each(function () {
+  $(".badge.bg-light.text-dark").each(function () {
     if (isDarkMode) {
-      $(this).removeClass('bg-light text-dark').addClass('bg-secondary text-light');
+      $(this)
+        .removeClass("bg-light text-dark")
+        .addClass("bg-secondary text-light");
     } else {
-      $(this).removeClass('bg-secondary text-light').addClass('bg-light text-dark');
+      $(this)
+        .removeClass("bg-secondary text-light")
+        .addClass("bg-light text-dark");
     }
   });
 }
@@ -427,13 +442,13 @@ function initClassFiltering() {
   if (!filterRadios.length || !classItems.length) return;
 
   // Añadir evento de cambio a cada radio de filtro
-  filterRadios.forEach(radio => {
+  filterRadios.forEach((radio) => {
     radio.addEventListener("change", function () {
       // Obtener valor de filtro del atributo de datos
       const filter = this.getAttribute("data-filter");
 
       // Mostrar/ocultar elementos de clase según el filtro
-      classItems.forEach(item => {
+      classItems.forEach((item) => {
         const categories = item.getAttribute("data-category").split(" ");
 
         if (filter === "all" || categories.includes(filter)) {
@@ -448,8 +463,8 @@ function initClassFiltering() {
       // Actualizar diseño de masonería después del filtrado
       if (typeof Masonry !== "undefined") {
         setTimeout(() => {
-          new Masonry(document.querySelector('#classes-grid'), {
-            percentPosition: true
+          new Masonry(document.querySelector("#classes-grid"), {
+            percentPosition: true,
           });
         }, 300);
       }
@@ -460,7 +475,7 @@ function initClassFiltering() {
   const allFilter = document.querySelector('.btn-check[data-filter="all"]');
   if (allFilter) {
     allFilter.checked = true;
-    const event = new Event('change');
+    const event = new Event("change");
     allFilter.dispatchEvent(event);
   }
 }
@@ -563,12 +578,12 @@ function initPricingToggle() {
 
     if (isAnnual) {
       // Mostrar precios anuales, ocultar precios mensuales
-      monthlyPrices.forEach(el => el.classList.add("d-none"));
-      annualPrices.forEach(el => el.classList.remove("d-none"));
+      monthlyPrices.forEach((el) => el.classList.add("d-none"));
+      annualPrices.forEach((el) => el.classList.remove("d-none"));
     } else {
       // Mostrar precios mensuales, ocultar precios anuales
-      monthlyPrices.forEach(el => el.classList.remove("d-none"));
-      annualPrices.forEach(el => el.classList.add("d-none"));
+      monthlyPrices.forEach((el) => el.classList.remove("d-none"));
+      annualPrices.forEach((el) => el.classList.add("d-none"));
     }
   });
 }
@@ -585,9 +600,13 @@ function initMobileMenu() {
     // Añadir clase de animación a elementos del menú cuando se abre el menú
     if (this.getAttribute("aria-expanded") === "false") {
       setTimeout(function () {
-        document.querySelectorAll(".navbar-nav .nav-item").forEach((item, index) => {
-          item.style.animation = `fadeInRight 0.3s ease forwards ${index * 0.1}s`;
-        });
+        document
+          .querySelectorAll(".navbar-nav .nav-item")
+          .forEach((item, index) => {
+            item.style.animation = `fadeInRight 0.3s ease forwards ${
+              index * 0.1
+            }s`;
+          });
       }, 100);
     }
   });
@@ -599,7 +618,7 @@ function initMobileMenu() {
  */
 function initCardEffects() {
   // Añadir efectos hover a tarjetas de clase
-  document.querySelectorAll(".class-card").forEach(card => {
+  document.querySelectorAll(".class-card").forEach((card) => {
     card.addEventListener("mouseenter", function () {
       this.querySelector("img").style.transform = "scale(1.05)";
     });
@@ -625,14 +644,20 @@ function initMasonryLayout() {
     if (!grid) return; // Si la cuadrícula no existe, finalizar función
 
     // Obtener altura base de fila desde CSS
-    const rowHeight = Number.parseInt(window.getComputedStyle(grid).getPropertyValue("grid-auto-rows"));
+    const rowHeight = Number.parseInt(
+      window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
+    );
     // Obtener espacio entre filas desde CSS
-    const rowGap = Number.parseInt(window.getComputedStyle(grid).getPropertyValue("grid-row-gap"));
+    const rowGap = Number.parseInt(
+      window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
+    );
 
     // Para cada elemento visible en la cuadrícula
     document.querySelectorAll(".class-item:not(.hidden)").forEach((item) => {
       // Calcular cuántas filas debe ocupar según su altura real
-      const rowSpan = Math.ceil((item.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+      const rowSpan = Math.ceil(
+        (item.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap)
+      );
       // Aplicar el número de filas como valor grid-row-end
       item.style.gridRowEnd = "span " + rowSpan;
     });
@@ -650,64 +675,70 @@ function initMasonryLayout() {
  */
 function initBlogFeatures() {
   // Filtrado de publicaciones del blog
-  $('.filter-category').on('click', function (e) {
+  $(".filter-category").on("click", function (e) {
     e.preventDefault();
 
     // Obtener categoría seleccionada
-    const category = $(this).data('category');
+    const category = $(this).data("category");
 
     // Resaltar categoría activa
-    $('.filter-category').parent().removeClass('active');
-    $(this).parent().addClass('active');
+    $(".filter-category").parent().removeClass("active");
+    $(this).parent().addClass("active");
 
     // Filtrar publicaciones con animación
-    if (category === 'all') {
-      $('.blog-post').fadeIn(400);
+    if (category === "all") {
+      $(".blog-post").fadeIn(400);
     } else {
-      $('.blog-post').hide();
+      $(".blog-post").hide();
       $('.blog-post[data-category="' + category + '"]').fadeIn(400);
     }
   });
 
   // Funcionalidad de respuesta a comentarios
-  $('.btn-reply').on('click', function () {
-    const commentId = $(this).data('comment-id');
-    const replyForm = $('#reply-form-' + commentId);
+  $(".btn-reply").on("click", function () {
+    const commentId = $(this).data("comment-id");
+    const replyForm = $("#reply-form-" + commentId);
 
     // Alternar visibilidad del formulario de respuesta
     replyForm.slideToggle(300);
 
     // Enfocar en el área de texto cuando se muestra el formulario
-    if (replyForm.is(':visible')) {
-      replyForm.find('textarea').focus();
+    if (replyForm.is(":visible")) {
+      replyForm.find("textarea").focus();
     }
   });
 
   // Manejar envío de formulario de comentarios
-  $('.comment-form').on('submit', function (e) {
+  $(".comment-form").on("submit", function (e) {
     e.preventDefault();
 
     const form = $(this);
     const submitBtn = form.find('button[type="submit"]');
-    const textarea = form.find('textarea');
+    const textarea = form.find("textarea");
     const commentText = textarea.val().trim();
 
     if (commentText) {
       // Deshabilitar botón y mostrar estado de carga
-      submitBtn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...');
+      submitBtn
+        .prop("disabled", true)
+        .html(
+          '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...'
+        );
 
       // Simular solicitud AJAX
       setTimeout(function () {
         // Mostrar mensaje de éxito
-        const successMessage = $('<div class="alert alert-success mt-3" role="alert">Tu comentario ha sido enviado y está pendiente de moderación.</div>');
+        const successMessage = $(
+          '<div class="alert alert-success mt-3" role="alert">Tu comentario ha sido enviado y está pendiente de moderación.</div>'
+        );
         form.after(successMessage);
 
         // Reiniciar formulario
         form[0].reset();
-        submitBtn.prop('disabled', false).html('Publicar');
+        submitBtn.prop("disabled", false).html("Publicar");
 
         // Si es un formulario de respuesta, ocultarlo después del envío
-        if (form.hasClass('reply-form')) {
+        if (form.hasClass("reply-form")) {
           setTimeout(function () {
             form.slideUp(300);
             successMessage.fadeOut(300, function () {
@@ -725,36 +756,44 @@ function initBlogFeatures() {
       }, 1500);
     } else {
       // Mostrar error de validación
-      textarea.addClass('is-invalid');
+      textarea.addClass("is-invalid");
     }
   });
 
   // Eliminar error de validación cuando el usuario comienza a escribir
-  $('.comment-form textarea').on('input', function () {
-    $(this).removeClass('is-invalid');
+  $(".comment-form textarea").on("input", function () {
+    $(this).removeClass("is-invalid");
   });
 
   // Manejar suscripción al boletín en la barra lateral del blog
-  $('#blog-newsletter-form').on('submit', function (e) {
+  $("#blog-newsletter-form").on("submit", function (e) {
     e.preventDefault();
 
     const form = $(this);
     const emailInput = form.find('input[type="email"]');
-    const submitBtn = form.find('button');
+    const submitBtn = form.find("button");
 
     if (emailInput[0].checkValidity()) {
       // Mostrar estado de carga
-      submitBtn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+      submitBtn
+        .prop("disabled", true)
+        .html(
+          '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'
+        );
 
       // Simular solicitud AJAX
       setTimeout(function () {
         // Mostrar mensaje de éxito
-        const successMessage = $('<div class="alert alert-success mt-3" role="alert">¡Gracias por suscribirte a nuestro boletín!</div>');
+        const successMessage = $(
+          '<div class="alert alert-success mt-3" role="alert">¡Gracias por suscribirte a nuestro boletín!</div>'
+        );
         form.after(successMessage);
 
         // Reiniciar formulario
         form[0].reset();
-        submitBtn.prop('disabled', false).html('<i class="fas fa-paper-plane"></i>');
+        submitBtn
+          .prop("disabled", false)
+          .html('<i class="fas fa-paper-plane"></i>');
 
         // Eliminar mensaje de éxito después de 5 segundos
         setTimeout(function () {
@@ -764,7 +803,7 @@ function initBlogFeatures() {
         }, 5000);
       }, 1500);
     } else {
-      emailInput.addClass('is-invalid');
+      emailInput.addClass("is-invalid");
     }
   });
 }
@@ -775,15 +814,15 @@ function initBlogFeatures() {
  */
 function initTrainerFeatures() {
   // Hacer que las tarjetas de entrenador sean accesibles mediante teclado
-  const trainerCards = document.querySelectorAll('.trainer-card');
+  const trainerCards = document.querySelectorAll(".trainer-card");
 
-  trainerCards.forEach(card => {
-    card.setAttribute('tabindex', '0');
+  trainerCards.forEach((card) => {
+    card.setAttribute("tabindex", "0");
 
-    card.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
+    card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        this.classList.toggle('flipped');
+        this.classList.toggle("flipped");
       }
     });
   });
@@ -792,18 +831,23 @@ function initTrainerFeatures() {
   const observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        $(entry.target).find('.progress-bar').each(function () {
-          const skill = $(this).attr('aria-valuenow');
-          $(this).animate({
-            width: skill + '%'
-          }, 1000);
-        });
+        $(entry.target)
+          .find(".progress-bar")
+          .each(function () {
+            const skill = $(this).attr("aria-valuenow");
+            $(this).animate(
+              {
+                width: skill + "%",
+              },
+              1000
+            );
+          });
         observer.unobserve(entry.target);
       }
     });
   });
 
-  $('.progress').each(function () {
+  $(".progress").each(function () {
     observer.observe(this);
   });
 }
@@ -811,25 +855,24 @@ function initTrainerFeatures() {
 // Añadir JavaScript para animar las barras de progreso
 // Añadir dentro de la función initTrainersPageFeatures()
 
-
 /**
-   * Inicializa la funcionalidad del sistema de calificación por estrellas.
-   */
+ * Inicializa la funcionalidad del sistema de calificación por estrellas.
+ */
 function initStarRatingSystem() {
   console.log("Inicializando sistema de calificación por estrellas");
 
   // Manejar clic en una etiqueta de estrella
-  $('.star-rating .star-label').on('click', function () {
-    const $input = $(this).prev('input'); // Obtener el input radio asociado
+  $(".star-rating .star-label").on("click", function () {
+    const $input = $(this).prev("input"); // Obtener el input radio asociado
     const ratingValue = $input.val();
-    const $starRatingDiv = $(this).closest('.star-rating');
-    const $ratingText = $starRatingDiv.next('.small').find('.rating-value'); // Encontrar el span para mostrar el valor
+    const $starRatingDiv = $(this).closest(".star-rating");
+    const $ratingText = $starRatingDiv.next(".small").find(".rating-value"); // Encontrar el span para mostrar el valor
 
     // Marcar el botón radio (manejado visualmente por CSS basado en :checked)
-    $input.prop('checked', true);
+    $input.prop("checked", true);
 
     // Actualizar el atributo data-rating (opcional, pero puede ser útil)
-    $starRatingDiv.attr('data-rating', ratingValue);
+    $starRatingDiv.attr("data-rating", ratingValue);
 
     // Actualizar el texto mostrado
     if ($ratingText.length) {
@@ -842,7 +885,6 @@ function initStarRatingSystem() {
   // El efecto hover ahora es manejado puramente por CSS, no se necesita JS para los efectos visuales.
 }
 
-
 /**
  * Anima las barras de progreso hasta su ancho objetivo.
  * @param {jQuery|string} selector - Selector para las barras de progreso a animar.
@@ -850,11 +892,15 @@ function initStarRatingSystem() {
 function animateProgressBars(selector) {
   $(selector).each(function () {
     const $progressBar = $(this);
-    const targetWidth = $progressBar.attr('aria-valuenow') + '%';
+    const targetWidth = $progressBar.attr("aria-valuenow") + "%";
 
     // Animar solo si el ancho actual no es el ancho objetivo (previene re-animación)
-    if ($progressBar.width() / $progressBar.parent().width() * 100 !== parseFloat(targetWidth)) {
-      $progressBar.css('width', '0%') // Reiniciar ancho antes de animar
+    if (
+      ($progressBar.width() / $progressBar.parent().width()) * 100 !==
+      parseFloat(targetWidth)
+    ) {
+      $progressBar
+        .css("width", "0%") // Reiniciar ancho antes de animar
         .stop() // Detener animaciones previas
         .animate({ width: targetWidth }, 800); // Animar hasta el ancho objetivo
     }
@@ -862,11 +908,19 @@ function animateProgressBars(selector) {
 }
 
 // Activar animación cuando se voltea la tarjeta
-$('.trainer-card').on('mouseenter', function () {
-  setTimeout(function () {
-    animateProgressBars();
+$(".trainer-card").on("mouseenter", function () {
+  setTimeout(() => {
+    // Pasar un selector específico a la función
+    animateProgressBars($(this).find(".progress-bar"));
   }, 400); // Pequeño retraso para que coincida con la animación flip
 });
 
-// También animar al cargar la página para las tarjetas visibles
-animateProgressBars();
+// Inicialización adicional para el carrusel
+$(document).ready(function() {
+  $('.carousel').carousel();
+  // Específicamente para el carrusel de testimonios
+  $('#testimonialCarousel').carousel({
+    interval: 5000
+  });
+});
+
